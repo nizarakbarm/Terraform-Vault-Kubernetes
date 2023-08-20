@@ -3,7 +3,9 @@ provider "kubernetes" {
     config_path = "~/.kube/config"
 }
 provider "helm" {
-    config_path = "~/.kube/config"
+    kubernetes {
+        config_path = "~/.kube/config"
+    }
 }
 
 #Create namespace for vault
